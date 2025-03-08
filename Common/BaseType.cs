@@ -1,0 +1,139 @@
+
+namespace ValheimDamageTypesMod.Common
+{
+    public static class ValheimDamageBase
+    {
+        public enum DamageType
+        {
+            Blunt,
+            Pierce,
+            Slash,
+            Fire,
+            Frost,
+            Poison,
+            Lightning,
+            Spirit
+        }
+        public static Dictionary<int, HashSet<DamageType>> Projectiles = [];
+        public static Dictionary<int, HashSet<DamageType>> NPCs = [];
+        public static Dictionary<int, HashSet<DamageType>> Items = [];
+        public static string output = "";
+        public static void AssignDamage(string list, DamageType type)
+        {
+            foreach (var name in list.Split('\n'))
+            {
+                output += $"\nProjectiles[ProjectileID.{name}].Add(DamageType.{type});";
+            }
+            if (list == "")
+            {
+                Projectiles[ProjectileID.FireArrow].Add(DamageType.Fire);
+                Projectiles[ProjectileID.Starfury].Add(DamageType.Fire);
+                Projectiles[ProjectileID.FallingStar].Add(DamageType.Fire);
+                Projectiles[ProjectileID.BallofFire].Add(DamageType.Fire);
+                Projectiles[ProjectileID.Flamarang].Add(DamageType.Fire);
+                Projectiles[ProjectileID.Flamelash].Add(DamageType.Fire);
+                Projectiles[ProjectileID.Sunfury].Add(DamageType.Fire);
+                Projectiles[ProjectileID.MeteorShot].Add(DamageType.Fire);
+                Projectiles[ProjectileID.HellfireArrow].Add(DamageType.Fire);
+                Projectiles[ProjectileID.FlamingArrow].Add(DamageType.Fire);
+                Projectiles[ProjectileID.Flames].Add(DamageType.Fire);
+                Projectiles[ProjectileID.CursedFlameFriendly].Add(DamageType.Fire);
+                Projectiles[ProjectileID.CursedFlameHostile].Add(DamageType.Fire);
+                Projectiles[ProjectileID.EyeFire].Add(DamageType.Fire);
+                Projectiles[ProjectileID.CursedArrow].Add(DamageType.Fire);
+                Projectiles[ProjectileID.CursedBullet].Add(DamageType.Fire);
+                Projectiles[ProjectileID.Flare].Add(DamageType.Fire);
+                Projectiles[ProjectileID.RocketFireworkRed].Add(DamageType.Fire);
+                Projectiles[ProjectileID.RocketFireworkGreen].Add(DamageType.Fire);
+                Projectiles[ProjectileID.RocketFireworkBlue].Add(DamageType.Fire);
+                Projectiles[ProjectileID.RocketFireworkYellow].Add(DamageType.Fire);
+                Projectiles[ProjectileID.FlamethrowerTrap].Add(DamageType.Fire);
+                Projectiles[ProjectileID.FlamesTrap].Add(DamageType.Fire);
+                Projectiles[ProjectileID.Fireball].Add(DamageType.Fire);
+                Projectiles[ProjectileID.EyeBeam].Add(DamageType.Fire);
+                Projectiles[ProjectileID.HeatRay].Add(DamageType.Fire);
+                Projectiles[ProjectileID.InfernoHostileBolt].Add(DamageType.Fire);
+                Projectiles[ProjectileID.InfernoHostileBlast].Add(DamageType.Fire);
+                Projectiles[ProjectileID.InfernoFriendlyBolt].Add(DamageType.Fire);
+                Projectiles[ProjectileID.InfernoFriendlyBlast].Add(DamageType.Fire);
+                Projectiles[ProjectileID.Shadowflames].Add(DamageType.Fire);
+                Projectiles[ProjectileID.FlamingWood].Add(DamageType.Fire);
+                Projectiles[ProjectileID.GreekFire1].Add(DamageType.Fire);
+                Projectiles[ProjectileID.GreekFire2].Add(DamageType.Fire);
+                Projectiles[ProjectileID.GreekFire3].Add(DamageType.Fire);
+                Projectiles[ProjectileID.FlamingScythe].Add(DamageType.Fire);
+                Projectiles[ProjectileID.ImpFireball].Add(DamageType.Fire);
+                Projectiles[ProjectileID.MolotovCocktail].Add(DamageType.Fire);
+                Projectiles[ProjectileID.MolotovFire].Add(DamageType.Fire);
+                Projectiles[ProjectileID.MolotovFire2].Add(DamageType.Fire);
+                Projectiles[ProjectileID.MolotovFire3].Add(DamageType.Fire);
+                Projectiles[ProjectileID.RocketFireworksBoxRed].Add(DamageType.Fire);
+                Projectiles[ProjectileID.RocketFireworksBoxGreen].Add(DamageType.Fire);
+                Projectiles[ProjectileID.RocketFireworksBoxBlue].Add(DamageType.Fire);
+                Projectiles[ProjectileID.RocketFireworksBoxYellow].Add(DamageType.Fire);
+                Projectiles[ProjectileID.FireworkFountainYellow].Add(DamageType.Fire);
+                Projectiles[ProjectileID.FireworkFountainRed].Add(DamageType.Fire);
+                Projectiles[ProjectileID.FireworkFountainBlue].Add(DamageType.Fire);
+                Projectiles[ProjectileID.FireworkFountainRainbow].Add(DamageType.Fire);
+                Projectiles[ProjectileID.Meteor1].Add(DamageType.Fire);
+                Projectiles[ProjectileID.Meteor2].Add(DamageType.Fire);
+                Projectiles[ProjectileID.Meteor3].Add(DamageType.Fire);
+                Projectiles[ProjectileID.SolarFlareChainsaw].Add(DamageType.Fire);
+                Projectiles[ProjectileID.SolarFlareDrill].Add(DamageType.Fire);
+                Projectiles[ProjectileID.SaucerDeathray].Add(DamageType.Fire);
+                Projectiles[ProjectileID.PhantasmalDeathray].Add(DamageType.Fire);
+                Projectiles[ProjectileID.ChargedBlasterLaser].Add(DamageType.Fire);
+                Projectiles[ProjectileID.CultistBossFireBall].Add(DamageType.Fire);
+                Projectiles[ProjectileID.CultistBossFireBallClone].Add(DamageType.Fire);
+                Projectiles[ProjectileID.Hellwing].Add(DamageType.Fire);
+                Projectiles[ProjectileID.ShadowFlameArrow].Add(DamageType.Fire);
+                Projectiles[ProjectileID.ShadowFlame].Add(DamageType.Fire);
+                Projectiles[ProjectileID.ShadowFlameKnife].Add(DamageType.Fire);
+                Projectiles[ProjectileID.StarWrath].Add(DamageType.Fire);
+                Projectiles[ProjectileID.Spark].Add(DamageType.Fire);
+                Projectiles[ProjectileID.StardustSoldierLaser].Add(DamageType.Fire);
+                Projectiles[ProjectileID.HelFire].Add(DamageType.Fire);
+                Projectiles[ProjectileID.Cascade].Add(DamageType.Fire);
+                Projectiles[ProjectileID.MinecartMechLaser].Add(DamageType.Fire);
+                Projectiles[ProjectileID.DesertDjinnCurse].Add(DamageType.Fire);
+                Projectiles[ProjectileID.SolarFlareRay].Add(DamageType.Fire);
+                Projectiles[ProjectileID.SolarCounter].Add(DamageType.Fire);
+                Projectiles[ProjectileID.SolarWhipSword].Add(DamageType.Fire);
+                Projectiles[ProjectileID.SolarWhipSwordExplosion].Add(DamageType.Fire);
+                Projectiles[ProjectileID.LastPrismLaser].Add(DamageType.Fire);
+                Projectiles[ProjectileID.Daybreak].Add(DamageType.Fire);
+                Projectiles[ProjectileID.GeyserTrap].Add(DamageType.Fire);
+                Projectiles[ProjectileID.SpiritFlame].Add(DamageType.Fire);
+                Projectiles[ProjectileID.DD2FlameBurstTowerT1Shot].Add(DamageType.Fire);
+                Projectiles[ProjectileID.DD2FlameBurstTowerT2Shot].Add(DamageType.Fire);
+                Projectiles[ProjectileID.DD2FlameBurstTowerT3Shot].Add(DamageType.Fire);
+                Projectiles[ProjectileID.DD2DrakinShot].Add(DamageType.Fire);
+                Projectiles[ProjectileID.DD2BetsyFireball].Add(DamageType.Fire);
+                Projectiles[ProjectileID.DD2BetsyFlameBreath].Add(DamageType.Fire);
+                Projectiles[ProjectileID.DD2PhoenixBowShot].Add(DamageType.Fire);
+                Projectiles[ProjectileID.DD2BetsyArrow].Add(DamageType.Fire);
+                Projectiles[ProjectileID.ManaCloakStar].Add(DamageType.Fire);
+                Projectiles[ProjectileID.BeeCloakStar].Add(DamageType.Fire);
+                Projectiles[ProjectileID.StarVeilStar].Add(DamageType.Fire);
+                Projectiles[ProjectileID.StarCloakStar].Add(DamageType.Fire);
+                Projectiles[ProjectileID.SuperStar].Add(DamageType.Fire);
+                Projectiles[ProjectileID.SuperStarSlash].Add(DamageType.Fire);
+                Projectiles[ProjectileID.LavaRocket].Add(DamageType.Fire);
+                Projectiles[ProjectileID.LavaGrenade].Add(DamageType.Fire);
+                Projectiles[ProjectileID.LavaMine].Add(DamageType.Fire);
+                Projectiles[ProjectileID.HallowBossLastingRainbow].Add(DamageType.Fire);
+                Projectiles[ProjectileID.HallowBossRainbowStreak].Add(DamageType.Fire);
+                Projectiles[ProjectileID.HallowBossDeathAurora].Add(DamageType.Fire);
+                Projectiles[ProjectileID.FairyQueenSunDance].Add(DamageType.Fire);
+                Projectiles[ProjectileID.FairyQueenHymn].Add(DamageType.Fire);
+                Projectiles[ProjectileID.FairyQueenMagicItemShot].Add(DamageType.Fire);
+                Projectiles[ProjectileID.FairyQueenRangedItemShot].Add(DamageType.Fire);
+                Projectiles[ProjectileID.FlamingMace].Add(DamageType.Fire);
+                Projectiles[ProjectileID.DaybreakExplosion].Add(DamageType.Fire);
+                Projectiles[ProjectileID.StarCannonStar].Add(DamageType.Fire);
+                Projectiles[ProjectileID.Volcano].Add(DamageType.Fire);
+                Projectiles[ProjectileID.HorsemanPumpkin].Add(DamageType.Fire);
+            }
+        }
+    }
+}
